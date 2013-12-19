@@ -1,0 +1,35 @@
+Git Command Notes:
+======
+1.git init:初始化版本库；
+2.git status:查看版本库的状态，可以检测出当前工作区改动包括：修改、增加、删除；
+3.git diff <filename>:查看被改文件filename的详细改动；
+4.git add <filename>:添加文件file到暂存区(stage)；
+5.git commit -m "discript":提交暂存区里的更改到分支；
+6.git checkout -- <filename>:丢弃工作区的修改；
+7.git reset --hard head^ :回到上一个版本；
+8.git rm <filename>:从版本库中删除文件；
+9.git log:查看由进及远的提交日志，可以加上‘--pretty=oneline’参数，然后在一行内查看较简洁的日志信息:
+>$ git log
+>commit ea34578d5496d7dd233c827ed32a8cd576c5ee85
+>Author: xinyang <xyzheng@gmail.com>
+>Date:   Tue Aug 20 14:53:12 2013 +0800
+>
+>    add distributed
+>
+>commit cb926e7ea50ad11b8f9e909c05226233bf755030
+>Author: xinyang <xyzheng@gmail.com>
+>Date:   Mon Aug 19 17:51:55 2013 +0800
+>
+>    wrote a readme file
+
+>$ git log --pretty=oneline
+>3628164fb26d48395383f8f31179f24e0882e1e0 append GPL
+>ea34578d5496d7dd233c827ed32a8cd576c5ee85 add distributed
+>cb926e7ea50ad11b8f9e909c05226233bf755030 wrote a readme file
+
+10.git reflog:用来记录每一次操作的命令：
+>$ git reflog
+>ea34578 HEAD@{0}: reset: moving to HEAD^
+>3628164 HEAD@{1}: commit: append GPL
+>ea34578 HEAD@{2}: commit: add distributed
+>cb926e7 HEAD@{3}: commit (initial): wrote a readme file
